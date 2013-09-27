@@ -2,9 +2,9 @@
 /* Module-specific javascript can be placed here */
 
 $(document).ready(function() {
-			handleButton($('#et_save'),function() {
-					});
-	
+	handleButton($('#et_save'),function() {
+	});
+
 	handleButton($('#et_cancel'),function(e) {
 		if (m = window.location.href.match(/\/update\/[0-9]+/)) {
 			window.location.href = window.location.href.replace('/update/','/view/');
@@ -38,6 +38,10 @@ $(document).ready(function() {
 				el.text(currentText+', '+newText);
 			}
 		}
+	});
+
+	handleButton($('#et_print'),function(e) {
+		printIFrameUrl(OE_print_url, null);
 	});
 });
 

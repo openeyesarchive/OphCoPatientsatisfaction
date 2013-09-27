@@ -25,6 +25,14 @@
 
 <h3 class="withEventIcon"><?php echo $this->event_type->name?></h3>
 
+<?php
+	// Event actions
+	if ($this->canPrint()) {
+		$this->event_actions[] = EventAction::button('Print', 'print', null, array('id' => 'et_print'));
+	}
+	$this->renderPartial('//patient/event_actions');
+?>
+
 <div>
 	<?php $this->renderDefaultElements($this->action->id)?>
 	<?php $this->renderOptionalElements($this->action->id)?>
