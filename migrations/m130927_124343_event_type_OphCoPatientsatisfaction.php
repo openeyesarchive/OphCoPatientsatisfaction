@@ -19,8 +19,8 @@ class m130927_124343_event_type_OphCoPatientsatisfaction extends CDbMigration
 		$this->createTable('et_ophcopatientsatisfaction_satisfaction', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
 				'event_id' => 'int(10) unsigned NOT NULL',
-				'pleased_with_result' => 'int(10) NOT NULL',
-				'helped_daily_life' => 'int(10) NOT NULL',
+				'pleased_with_result' => 'int(10) NOT NULL DEFAULT 1',
+				'helped_daily_life' => 'int(10) NOT NULL DEFAULT 1',
 				'impression' => 'text COLLATE utf8_bin DEFAULT \'\'',
 				'complications' => 'text COLLATE utf8_bin DEFAULT \'\'',
 				'plan' => 'text COLLATE utf8_bin DEFAULT \'\'',

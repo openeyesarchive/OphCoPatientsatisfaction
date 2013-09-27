@@ -25,15 +25,31 @@
 	data-element-display-order="<?php echo $element->elementType->display_order?>">
 	<h4 class="elementTypeName"><?php echo $element->elementType->name; ?></h4>
 
-	<?php echo $form->slider($element, 'pleased_with_result', array('min' => 1, 'max' => 5, 'step' => 1))?>
-	<?php echo $form->slider($element, 'helped_daily_life', array('min' => 1, 'max' => 5, 'step' => 1))?>
-	<?php echo $form->textArea($element, 'impression', array('rows' => 6, 'cols' => 80))?>
-	<?php echo $form->textArea($element, 'complications', array('rows' => 6, 'cols' => 80))?>
-	<?php echo $form->textArea($element, 'plan', array('rows' => 6, 'cols' => 80))?>
-	<?php echo $form->checkBox($element, 'charged')?>
-	<?php echo $form->checkBox($element, 'discharged')?>
-	<?php echo $form->checkBox($element, 'discharge_acknowledged')?>
-	<?php echo $form->checkBox($element, 'chart_complete')?>
-	<?php echo $form->dropDownList($element, 'orbis_ophthalmologist_id', CHtml::listData(User::model()->findAll(array('order'=> 'username asc')),'id','username'),array('empty'=>'- Please select -'))?>
-	<?php echo $form->dropDownList($element, 'local_ophthalmologist_id', CHtml::listData(User::model()->findAll(array('order'=> 'username asc')),'id','username'),array('empty'=>'- Please select -'))?>
+	<div class="eventDetail">
+		<div class="label"></div>
+		<div class="data" style="font-size: 15px;">
+			How pleased are you with your eye surgery result?<br/>
+			(1 = Very unsatisfied, 5 = Very satisfied)
+		</div>
+	</div>
+
+	<?php echo $form->slider($element, 'pleased_with_result', array('min' => 1, 'max' => 5, 'step' => 1,'nolabel'=>true))?>
+
+	<div class="eventDetail">
+		<div class="label"></div>
+		<div class="data" style="font-size: 15px;">
+			Has your surgery helped you in your daily life?
+		</div>
+	</div>
+
+	<?php echo $form->slider($element, 'helped_daily_life', array('min' => 1, 'max' => 5, 'step' => 1,'nolabel'=>true))?>
+	<?php echo $form->textArea($element, 'impression', array('rows' => 4, 'cols' => 80))?>
+	<?php echo $form->textArea($element, 'complications', array('rows' => 4, 'cols' => 80))?>
+	<?php echo $form->textArea($element, 'plan', array('rows' => 4, 'cols' => 80))?>
+	<?php echo $form->checkBox($element, 'charged', array('text-align'=>'right'))?>
+	<?php echo $form->checkBox($element, 'discharged', array('text-align'=>'right'))?>
+	<?php echo $form->checkBox($element, 'discharge_acknowledged', array('text-align'=>'right'))?>
+	<?php echo $form->checkBox($element, 'chart_complete', array('text-align'=>'right'))?>
+	<?php echo $form->dropDownList($element, 'orbis_ophthalmologist_id', CHtml::listData(User::model()->findAll(array('order'=> 'first_name asc, last_name asc')),'id','fullName'),array('empty'=>'- Please select -'))?>
+	<?php echo $form->dropDownList($element, 'local_ophthalmologist_id', CHtml::listData(User::model()->findAll(array('order'=> 'first_name asc, last_name asc')),'id','fullName'),array('empty'=>'- Please select -'))?>
 </div>

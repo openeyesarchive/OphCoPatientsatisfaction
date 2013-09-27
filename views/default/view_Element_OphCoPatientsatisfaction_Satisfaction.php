@@ -59,12 +59,12 @@
 			<td><span class="big"><?php echo $element->chart_complete ? 'Yes' : 'No'?></span></td>
 		</tr>
 		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('or_ophthalmologist_id'))?></td>
-			<td><span class="big"><?php echo $element->or_ophthalmologist ? $element->or_ophthalmologist->username : 'None'?></span></td>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('orbis_ophthalmologist_id'))?></td>
+			<td><span class="big"><?php echo $element->orbis_ophthalmologist ? $element->orbis_ophthalmologist->username : 'None'?></span></td>
 		</tr>
 		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('lo_ophthalmologist_id'))?></td>
-			<td><span class="big"><?php echo $element->lo_ophthalmologist ? $element->lo_ophthalmologist->username : 'None'?></span></td>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('local_ophthalmologist_id'))?></td>
+			<td><span class="big"><?php echo $element->local_ophthalmologist ? $element->local_ophthalmologist->username : 'None'?></span></td>
 		</tr>
 	</tbody>
 </table>
