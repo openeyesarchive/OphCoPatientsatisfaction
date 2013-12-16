@@ -56,7 +56,6 @@ CREATE TABLE `et_ophcopatientsatisfaction_satisfaction_version` (
 	public function down()
 	{
 		$this->dropColumn('et_ophcopatientsatisfaction_satisfaction','deleted');
-		$this->dropColumn('et_ophcopatientsatisfaction_satisfaction_version','deleted');
 
 		$this->dropTable('et_ophcopatientsatisfaction_satisfaction_version');
 	}
