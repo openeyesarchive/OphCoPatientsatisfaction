@@ -21,9 +21,9 @@ class m130927_124343_event_type_OphCoPatientsatisfaction extends CDbMigration
 				'event_id' => 'int(10) unsigned NOT NULL',
 				'pleased_with_result' => 'int(10) NOT NULL DEFAULT 1',
 				'helped_daily_life' => 'int(10) NOT NULL DEFAULT 1',
-				'impression' => 'text COLLATE utf8_bin DEFAULT \'\'',
-				'complications' => 'text COLLATE utf8_bin DEFAULT \'\'',
-				'plan' => 'text COLLATE utf8_bin DEFAULT \'\'',
+				'impression' => 'text DEFAULT \'\'',
+				'complications' => 'text DEFAULT \'\'',
+				'plan' => 'text DEFAULT \'\'',
 				'charged' => 'tinyint(1) unsigned NOT NULL',
 				'discharged' => 'tinyint(1) unsigned NOT NULL',
 				'discharge_acknowledged' => 'tinyint(1) unsigned NOT NULL',
@@ -45,7 +45,7 @@ class m130927_124343_event_type_OphCoPatientsatisfaction extends CDbMigration
 				'CONSTRAINT `et_ophcopatientsatisfaction_satisfaction_ev_fk` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`)',
 				'CONSTRAINT `et_ophcopatientsatisfaction_satisfaction_ooi_fk` FOREIGN KEY (`orbis_ophthalmologist_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `et_ophcopatientsatisfaction_satisfaction_loi_fk` FOREIGN KEY (`local_ophthalmologist_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 	}
 
 	public function down()
