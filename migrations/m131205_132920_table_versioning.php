@@ -10,9 +10,9 @@ CREATE TABLE `et_ophcopatientsatisfaction_satisfaction_version` (
 	`event_id` int(10) unsigned NOT NULL,
 	`pleased_with_result` int(10) NOT NULL DEFAULT '1',
 	`helped_daily_life` int(10) NOT NULL DEFAULT '1',
-	`impression` text COLLATE utf8_bin,
-	`complications` text COLLATE utf8_bin,
-	`plan` text COLLATE utf8_bin,
+	`impression` text,
+	`complications` text,
+	`plan` text,
 	`charged` tinyint(1) unsigned NOT NULL,
 	`discharged` tinyint(1) unsigned NOT NULL,
 	`discharge_acknowledged` tinyint(1) unsigned NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE `et_ophcopatientsatisfaction_satisfaction_version` (
 	CONSTRAINT `acv_et_ophcopatientsatisfaction_satisfaction_ev_fk` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`),
 	CONSTRAINT `acv_et_ophcopatientsatisfaction_satisfaction_ooi_fk` FOREIGN KEY (`orbis_ophthalmologist_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_et_ophcopatientsatisfaction_satisfaction_loi_fk` FOREIGN KEY (`local_ophthalmologist_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('et_ophcopatientsatisfaction_satisfaction_version','id','int(10) unsigned NOT NULL');
