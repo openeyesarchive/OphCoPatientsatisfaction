@@ -50,6 +50,6 @@
 	<?php echo $form->checkBox($element, 'discharged', array('text-align'=>'right'))?>
 	<?php echo $form->checkBox($element, 'discharge_acknowledged', array('text-align'=>'right'))?>
 	<?php echo $form->checkBox($element, 'chart_complete', array('text-align'=>'right'))?>
-	<?php echo $form->dropDownList($element, 'orbis_ophthalmologist_id', CHtml::listData(User::model()->active()->findAll(array('order'=> 'first_name asc, last_name asc')),'id','fullName'),array('empty'=>'- Please select -'))?>
-	<?php echo $form->dropDownList($element, 'local_ophthalmologist_id', CHtml::listData(User::model()->active()->findAll(array('order'=> 'first_name asc, last_name asc')),'id','fullName'),array('empty'=>'- Please select -'))?>
+	<?php echo $form->dropDownList($element, 'orbis_ophthalmologist_id', CHtml::listData(User::model()->activeOrPk($element->orbis_ophthalmologist_id)->findAll(array('order'=> 'first_name asc, last_name asc')),'id','fullName'),array('empty'=>'- Please select -'))?>
+	<?php echo $form->dropDownList($element, 'local_ophthalmologist_id', CHtml::listData(User::model()->activeOrPk($element->local_ophthalmologist_id)->findAll(array('order'=> 'first_name asc, last_name asc')),'id','fullName'),array('empty'=>'- Please select -'))?>
 </div>
